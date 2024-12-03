@@ -6,9 +6,9 @@ const rows = input.split("\n");
 
 let sum = 0;
 
+let enabled = true;
 for (const row of rows) {
   const match = row.match(/(do|don't|mul)\([0-9]*,?[0-9]*\)/g);
-  let enabled = true;
   let a: number = 0;
   let b: number = 0;
   for (const m of match!) {
@@ -25,8 +25,6 @@ for (const row of rows) {
       }
     }
     console.log(m, instruction, enabled, m, `${a}x${b}=${a * b}`);
-    a = 0;
-    b = 0;
   }
 }
 
