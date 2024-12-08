@@ -16,10 +16,10 @@ cells.forEach((row, y) => {
       x < row.length - 1 &&
       cell === "A"
     ) {
-      const NE = cells[y - 1][x - 1] === "M" && cells[y + 1][x + 1] === "S";
-      const SW = cells[y - 1][x - 1] === "S" && cells[y + 1][x + 1] === "M";
-      const SE = cells[y + 1][x - 1] === "M" && cells[y - 1][x + 1] === "S";
-      const NW = cells[y + 1][x - 1] === "S" && cells[y - 1][x + 1] === "M";
+      const NW = cells[y - 1][x - 1] === "M" && cells[y + 1][x + 1] === "S";
+      const SE = cells[y - 1][x - 1] === "S" && cells[y + 1][x + 1] === "M";
+      const SW = cells[y + 1][x - 1] === "M" && cells[y - 1][x + 1] === "S";
+      const NE = cells[y + 1][x - 1] === "S" && cells[y - 1][x + 1] === "M";
 
       if ((NE || SW) && (SE || NW)) {
         cells[y][x] = "#";
