@@ -36,13 +36,13 @@ console.log(longestSequence, premutationsTotal);
 console.log(premutations);
 
 const sums = rows.map((row) => {
-  const permutationsTotal = operators.length ** (row.numbers.length - 1);
-  const permutationSlice = premutations
-    .slice(0, permutationsTotal)
-    .map((permugationRow) => permugationRow.slice(0, row.numbers.length - 1));
-  const rowSum = permutationSlice.map((permutationRow, i) => {
+  const premutationsTotal = operators.length ** (row.numbers.length - 1);
+  const premutationSlice = premutations
+    .slice(0, premutationsTotal)
+    .map((premutationRow) => premutationRow.slice(0, row.numbers.length - 1));
+  const rowSum = premutationSlice.map((premutationRow, i) => {
     const sum = row.numbers.slice(1).reduce((acc, number, column) => {
-      const operator = operators[permutationRow[column]];
+      const operator = operators[premutationRow[column]];
 
       return operator(acc, number);
     }, row.numbers[0]);
